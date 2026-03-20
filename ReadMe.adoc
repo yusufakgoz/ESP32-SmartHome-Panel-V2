@@ -1,57 +1,32 @@
-:Author: 34yusuf
-:Email:
-:Date: 18/03/2026
-:Revision: version#
-:License: Public Domain
+# 🏡 ESP32 Smart Home Panel V2
 
-= Project: {Project}
+Bu proje, **ESP32 (CYD - Cheap Yellow Display)** kullanılarak geliştirilmiş, **LVGL** arayüz kütüphanesi ve **Arduino IoT Cloud** altyapısıyla çalışan profesyonel bir Akıllı Ev (Smart Home) Kontrol Panelidir. 
 
-Describe your project
+Önceki versiyonun (V1) üzerine donanımsal ve yazılımsal birçok iyileştirme yapılarak UI/UX standartları Apple iOS (Apple HomeKit) seviyesine çekilmiştir. Özel tasarım PLA 3D baskı kasa ile kullanıma sunulmuştur.
 
-== Step 1: Installation
-Please describe the steps to install this project.
+## ✨ Öne Çıkan Özellikler (V2)
+* 📱 **Pürüzsüz Arayüz (LVGL):** Gecikmesiz, dokunmatik hassasiyeti yüksek, kaydırılabilir çoklu sayfa mimarisi.
+* ☁️ **Bulut Entegrasyonu:** Arduino IoT Cloud ve Google Home entegrasyonu ile 0 gecikmeli çift yönlü haberleşme.
+* 🌤️ **Canlı Hava Durumu & 5 Günlük Tahmin:** OpenWeatherMap API kullanılarak anlık veri çekimi ve Grid (Izgara) tasarımlı kayan yazılı tahmin ekranı.
+* 🌓 **Aydınlık / Karanlık Tema (Light/Dark Mode):** Ayarlar menüsünden tek tuşla tüm arayüzün renk paletini anında değiştirme.
+* 💡 **PWM Ekran Parlaklığı:** Slider (Kaydırıcı) üzerinden donanımsal arka ışık (backlight) kontrolü.
+* 🔧 **Hardware Hack:** CYD ekranların fabrikasyon BGR renk sorunlarına (Invert Color) karşı yazılımsal düzeltme algoritmaları.
 
-For example:
+## 🛠️ Kullanılan Teknolojiler
+* **Mikrodenetleyici:** ESP32 (2432S028 / CYD 2.8" Dokunmatik Ekran)
+* **Dil:** C++ (Arduino IDE)
+* **Kütüphaneler:** LVGL, TFT_eSPI, XPT2046_Touchscreen, ArduinoJson, ArduinoIoTCloud
+* **Sensör:** DHT22 (İç ortam sıcaklık ve nem)
+* **Dış Kasa:** PLA Filament ile 3D Baskı
 
-1. Open this file
-2. Edit as you like
-3. Release to the World!
+## 🚀 Kurulum ve Kullanım
+1. Bu depoyu indirin.
+2. `arduino_secrets.h` dosyasının içerisine kendi Wi-Fi bilgilerinizi ve Arduino Cloud Secret Key'inizi girin.
+3. Kodu ESP32 cihazınıza yükleyin.
+4. Gerekli kütüphanelerin Arduino IDE üzerinde kurulu olduğundan emin olun (`lv_conf.h` ayarlarının ekranınıza uygun yapılması gerekmektedir).
 
-== Step 2: Assemble the circuit
-
-Assemble the circuit following the diagram layout.png attached to the sketch
-
-== Step 3: Load the code
-
-Upload the code contained in this sketch on to your board
-
-=== Folder structure
-
-....
- sketch123                => Arduino sketch folder
-  ├── sketch123.ino       => main Arduino file
-  ├── schematics.png      => (optional) an image of the required schematics
-  ├── layout.png          => (optional) an image of the layout
-  └── ReadMe.adoc         => this file
-....
-
-=== License
-This project is released under a {License} License.
-
-=== Contributing
-To contribute to this project please contact: 
-
-=== BOM
-Add the bill of the materials you need for this project.
-
-|===
-| ID | Part name      | Part number | Quantity
-| R1 | 10k Resistor   | 1234-abcd   | 10       
-| L1 | Red LED        | 2345-asdf   | 5        
-| A1 | Arduino Zero   | ABX00066    | 1        
-|===
-
-
+---
+*Bu proje, nesnelerin interneti (IoT) ve gömülü sistem arayüz tasarımı üzerine kişisel bir Ar-Ge çalışmasıdır.*
 === Help
 This document is written in the _AsciiDoc_ format, a markup language to describe documents. 
 If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
